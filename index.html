@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statsbudsjettet 2027: Samferdsel</title>
+<meta name="description" content="Hva endres for veg, bil, tog, fly og post i regjeringens forslag til statsbudsjett for 2027? Før og nå, forklart med tall.">
+<meta property="og:title" content="Statsbudsjettet 2027: Dette endres for samferdsel">
+<meta property="og:description" content="Før og nå for veg, bil, tog, fly og post – forklart med tall fra Prop. 1 S og Prop. 1 LS (2026–2027).">
+<style>
+:root{
+  color-scheme: light;
+  --page:#f9f9f7; --surface:#fcfcfb; --card:#ffffff;
+  --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,.10);
+  --up:#2a78d6; --down:#e34948; --s1:#2a78d6; --s2:#eb6834; --old:#a3a19a; --track:#eceae4;
+  --chip-new:#e7f1fb; --chip-down:#fbebeb; --chip-same:#f0efec; --chip-up:#e5f4e4; --chip-mid:#f9ece7;
+  --dot-new:#2a78d6; --dot-down:#d03b3b; --dot-same:#898781; --dot-up:#0ca30c; --dot-mid:#ec835a;
+  --link:#1c5cab; --hero:#eef4fc;
+}
+@media (prefers-color-scheme: dark){
+  :root:where(:not([data-theme="light"])){
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19; --card:#1a1a19;
+    --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
+    --up:#3987e5; --down:#e66767; --s1:#3987e5; --s2:#d95926; --old:#6b6a65; --track:#262624;
+    --chip-new:#14263b; --chip-down:#3a1d1d; --chip-same:#2a2a28; --chip-up:#16301a; --chip-mid:#3a2418;
+    --link:#86b6ef; --hero:#121b26;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --page:#0d0d0d; --surface:#1a1a19; --card:#1a1a19;
+  --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
+  --up:#3987e5; --down:#e66767; --s1:#3987e5; --s2:#d95926; --old:#6b6a65; --track:#262624;
+  --chip-new:#14263b; --chip-down:#3a1d1d; --chip-same:#2a2a28; --chip-up:#16301a; --chip-mid:#3a2418;
+  --link:#86b6ef; --hero:#121b26;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--link)}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header.hero{background:var(--hero);border-bottom:1px solid var(--border);padding:48px 0 36px}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:0 0 10px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
+.lede{font-size:clamp(17px,2.2vw,20px);color:var(--ink-2);margin:0 0 26px;max-width:680px}
+.status{display:inline-flex;gap:8px;align-items:center;font-size:14px;color:var(--ink-2);background:var(--card);border:1px solid var(--border);border-radius:999px;padding:6px 14px;margin-bottom:28px}
+.status b{color:var(--ink)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.tile{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.tile .v{font-size:34px;font-weight:650;line-height:1.1;letter-spacing:-.01em}
+.tile .l{font-size:14px;color:var(--ink-2);margin-top:6px}
+.tile .d{font-size:13px;color:var(--muted);margin-top:4px}
+section{padding:44px 0 8px}
+h2{font-size:clamp(22px,3.4vw,28px);line-height:1.2;margin:0 0 8px;letter-spacing:-.005em}
+.intro{color:var(--ink-2);margin:0 0 22px;max-width:700px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 20px 14px}
+.chart-title{font-weight:650;font-size:17px;margin:0 0 4px}
+.chart-sub{font-size:14px;color:var(--ink-2);margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-2);margin:0 0 8px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+.sw.line{height:0;border-top:2px dashed var(--ink-2);border-radius:0;width:16px}
+.sw.line.solid{border-top-style:solid}
+.chart{width:100%;position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{font-family:inherit}
+.t-ink{fill:var(--ink)} .t-2{fill:var(--ink-2)} .t-mut{fill:var(--muted)}
+.halo{paint-order:stroke;stroke:var(--card);stroke-width:5px;stroke-linejoin:round}
+.src{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+details.tbl{margin-top:10px;font-size:14px}
+details.tbl summary{cursor:pointer;color:var(--ink-2)}
+table{border-collapse:collapse;width:100%;margin-top:8px;font-size:14px}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--grid)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.ba{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.ba header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.ba h3{font-size:16.5px;margin:0;line-height:1.3}
+.chip{flex:none;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--ink);border-radius:999px;padding:3px 10px 3px 8px;white-space:nowrap}
+.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.chip.down{background:var(--chip-down)} .chip.down::before{background:var(--dot-down)}
+.chip.new{background:var(--chip-new)} .chip.new::before{background:var(--dot-new)}
+.chip.same{background:var(--chip-same)} .chip.same::before{background:var(--dot-same)}
+.chip.up{background:var(--chip-up)} .chip.up::before{background:var(--dot-up)}
+.chip.mid{background:var(--chip-mid)} .chip.mid::before{background:var(--dot-mid)}
+.ba-row{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch}
+.ba-col{border-radius:10px;padding:10px 12px;background:var(--page);border:1px solid var(--border)}
+.ba-col.now{background:var(--hero)}
+.ba-lab{display:block;font-size:12px;font-weight:600;color:var(--ink-2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.ba-val{display:block;font-weight:600;line-height:1.3}
+.ba-arrow{align-self:center;color:var(--muted);font-size:20px}
+.ba-note{margin:0;font-size:14px;color:var(--ink-2)}
+.calc{display:grid;gap:14px;margin-bottom:8px}
+.calc label{font-weight:600;font-size:15px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.calc output{font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--s1);height:28px}
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.res div{background:var(--page);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.res .k{font-size:12.5px;color:var(--ink-2)}
+.res .x{font-size:20px;font-weight:650;margin-top:2px}
+.res .delta{background:var(--hero)}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.list li{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px 12px 40px;position:relative}
+.list li::before{content:"";position:absolute;left:16px;top:20px;width:10px;height:10px;border-radius:50%;background:var(--dot-new)}
+.list.same li::before{background:var(--dot-same)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.two .card h3{margin:0 0 8px;font-size:17px}
+.two .card ul{margin:0;padding-left:20px}
+.two .card li{margin-bottom:8px}
+.trend{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0 14px}
+.trend div{background:var(--page);border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:14px;color:var(--ink-2)}
+.trend b{display:block;font-size:22px;color:var(--ink)}
+dl.gloss{margin:0;display:grid;gap:10px}
+dl.gloss div{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 16px}
+dl.gloss dt{font-weight:650}
+dl.gloss dd{margin:2px 0 0;color:var(--ink-2)}
+footer{padding:40px 0 60px;color:var(--ink-2);font-size:14px}
+footer ol{padding-left:20px}
+footer li{margin-bottom:6px}
+#tip{position:fixed;z-index:10;max-width:280px;background:var(--ink);color:var(--surface);font-size:13.5px;line-height:1.4;padding:8px 10px;border-radius:8px;pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+@media (max-width:560px){
+  header.hero{padding:32px 0 26px}
+  .tile .v{font-size:28px}
+  .status{display:block;border-radius:12px}
+  .res{grid-template-columns:1fr 1fr}
+  .res .delta{grid-column:1 / -1}
+  .card{padding:16px 14px 12px}
+}
+</style>
+</head>
+<body>
+<div id="tip" hidden></div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Statsbudsjettet 2027 · Samferdsel</p>
+    <h1>Dette endres for veg, bil, tog, fly og post</h1>
+    <p class="lede">Regjeringen foreslår 105 milliarder kroner til samferdsel i 2027. Jernbanen får mer, fly og post får mindre, elbilen blir dyrere, og ekstrapengene til fylkesveiene forsvinner. Her er før og nå, forklart med tall.</p>
+    <div class="status">Status: <b>forslag</b> · lagt fram 7. oktober 2026 · Stortinget vedtar i desember</div>
+    <div class="tiles">
+      <div class="tile"><div class="v">105 mrd.</div><div class="l">kroner til samferdsel i 2027</div><div class="d">+2,4 % fra 2026, litt under forventet prisvekst</div></div>
+      <div class="tile"><div class="v">92 %</div><div class="l">av det transportplanen (NTP) legger opp til</div><div class="d">ned fra 95 % i 2025 og 93 % i 2026</div></div>
+      <div class="tile"><div class="v">2</div><div class="l">nye vegprosjekter starter opp</div><div class="d">E39 Smiene–Harestad og rv. 70 i Kristiansund</div></div>
+      <div class="tile"><div class="v">+37 500</div><div class="l">kroner mer i moms på en elbil over 300 000 kr</div><div class="d">momsfritaket halveres til 150 000 kr</div></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="for-og-na">
+  <h2>Før og nå: de viktigste endringene</h2>
+  <p class="intro">Venstre side viser hvordan det er i 2026. Høyre side viser hva regjeringen foreslår for 2027.</p>
+  <div class="ba-grid">
+    <article class="ba">
+      <header><h3>Ekstra penger til fylkesveier</h3><span class="chip down">Kutt</span></header>
+      <div class="ba-row"><div class="ba-col"><span class="ba-lab">2026</span><span class="ba-val">1 mrd. kr ekstra til vedlikehold</span></div><span class="ba-arrow" aria-hidden="true">→</span><div class="ba-col now"><span class="ba-lab">2027</span><span class="ba-val">Ikke videreført</span></div></div>
+      <p class="ba-note">Milliarden kom i revidert budsjett i juni 2026. Fylkene får i stedet 0,6 mrd. kr i frie midler som de prioriterer selv.</p>
+    </article>
+    <article class="ba">
+      <header><h3>Moms på elbil</h3><span class="chip down">Dyrere</span></header>
+      <div class="ba-row"><div class="ba-col"><span class="ba-lab">2026</span><span class="ba-val">Momsfritt opp til 300 000 kr</span></div><span class="ba-arrow" aria-hidden="true">→</span><div class="ba-col now"><span class="ba-lab">2027</span><span class="ba-val">Momsfritt opp til 150 000 kr</span></div></div>
+      <p class="ba-note">Opptil 37 500 kr mer i moms per bil. Staten får 3,8 mrd. kr mer. <a href="#elbil">Regn på din bil</a>.</p>
+    </article>
+    <article class="ba">
+      <header><h3>Avgift på bensin</h3><span class="chip mid">Litt dyrere</span></header>
+      <div class="ba-row"><div class="ba-col"><span class="ba-lab">2026</span><span class="ba-val">7,57 kr per liter</span></div><span class="ba-arrow" aria-hidden="true">→</span><div class="ba-col now"><span class="ba-lab">2027</span><span class="ba-val">7,77 kr per liter</span></div></div>
+      <p class="ba-note">Veibruksavgiften går ned, CO₂-avgiften går opp. Til sammen ca. 25 øre mer per liter med moms. <a href="#drivstoff">Se fordelingen</a>.</p>
+    </article>
+    <article class="ba">
+      <header><h3>Avgift på diesel</h3><span class="chip mid">Litt dyrere</span></header>
+      <div class="ba-row"><div class="ba-col"><span class="ba-lab">2026</span><span class="ba-val">6,70 kr per liter</span></div><span class="ba-arrow" aria-hidden="true">→</span><div class="ba-col now"><span class="ba-lab">2027</span><span class="ba-val">6,97 kr per liter</span></div></div>
+      <p class="ba-note">Samme omlegging som for bensin. Ca. 34 øre mer per liter med moms.</p>
+    </article>
+    <article class="ba">
+      <header><h3>Vedlikehold av jernbanen</h3><span class="chip down">Kutt</span></header>
+      <div class="ba-row"><div class="ba-col"><span class="ba-lab">2026</span><span class="ba-val">15,36 mrd. kr</span></div><span class="ba-arrow" aria-hidden="true">→</span><div class="ba-col now"><span class="ba-lab">2027</span><span class="ba-val">15,14 mrd. kr</span></div></div>
+      <p class="ba-note">Drift, vedlikehold og fornying kuttes med 220 mill. kr. Pengene flyttes til å fullføre InterCity til Moss og Hamar.</p>
+    </article>
+    <article class="ba">
+      <header><h3>Postombæring</h3><span class="chip down">Kutt</span></header>
+      <div class="ba-row"><div class="ba-col"><span class="ba-lab">2026</span><span class="ba-val">Brev annenhver dag</span></div><span class="ba-arrow" aria-hidden="true">→</span><div class="ba-col now"><span class="ba-lab">Fra 1. juli 2027</span><span class="ba-val">Brev én dag i uka</span></div></div>
+      <p class="ba-note">Statens kjøp av posttjenester kuttes fra 2,0 til 1,5 mrd. kr. Raskere levering kan kjøpes med høyere porto.</p>
+    </article>
+    <article class="ba">
+      <header><h3>Tilskudd til Avinor</h3><span class="chip down">Kutt</span></header>
+      <div class="ba-row"><div class="ba-col"><span class="ba-lab">2026</span><span class="ba-val">1,97 mrd. kr</span></div><span class="ba-arrow" aria-hidden="true">→</span><div class="ba-col now"><span class="ba-lab">2027</span><span class="ba-val">0,27 mrd. kr</span></div></div>
+      <p class="ba-note">Ingen lufthavner legges ned. Kjøp av regionale flyruter (FOT) får 2,6 mrd. kr.</p>
+    </article>
+    <article class="ba">
+      <header><h3>Månedskort på buss og tog</h3><span class="chip same">Uendret</span></header>
+      <div class="ba-row"><div class="ba-col"><span class="ba-lab">2026</span><span class="ba-val">Ca. 100 kr billigere</span></div><span class="ba-arrow" aria-hidden="true">→</span><div class="ba-col now"><span class="ba-lab">2027</span><span class="ba-val">Ca. 100 kr billigere</span></div></div>
+      <p class="ba-note">Den midlertidige rabatten fortsetter (620 mill. kr), men blir ikke større.</p>
+    </article>
+    <article class="ba">
+      <header><h3>Elektriske varebiler</h3><span class="chip up">Lettelse</span></header>
+      <div class="ba-row"><div class="ba-col"><span class="ba-lab">2026</span><span class="ba-val">Lette el-varebiler fritatt</span></div><span class="ba-arrow" aria-hidden="true">→</span><div class="ba-col now"><span class="ba-lab">Fra 1. mars 2027</span><span class="ba-val">Alle el-varebiler fritatt</span></div></div>
+      <p class="ba-note">Gjelder trafikkforsikringsavgiften.</p>
+    </article>
+    <article class="ba">
+      <header><h3>Statlig bygde bruer på fylkes- og kommuneveg</h3><span class="chip mid">Endret ansvar</span></header>
+      <div class="ba-row"><div class="ba-col"><span class="ba-lab">I dag</span><span class="ba-val">Stortinget har bedt staten vedlikeholde dem</span></div><span class="ba-arrow" aria-hidden="true">→</span><div class="ba-col now"><span class="ba-lab">Forslag</span><span class="ba-val">Vedtaket oppheves</span></div></div>
+      <p class="ba-note">Ansvaret blir dermed liggende hos kommuner og fylker.</p>
+    </article>
+  </div>
+</section>
+
+<section id="pengene">
+  <h2>Hvor går pengene – mer eller mindre enn i fjor?</h2>
+  <p class="intro">Alle samferdselsområdene sammenlignet med budsjettet for 2026. Den stiplede streken viser forventet prisvekst: et område som havner til venstre for streken, kan kjøpe mindre for pengene enn i år.</p>
+  <div class="card">
+    <p class="chart-title">Jernbane og togkjøp øker mest – luftfart og post kuttes kraftig</p>
+    <p class="chart-sub">Endring fra budsjett 2026 til forslag 2027, prosent (løpende kroner)</p>
+    <div class="legend"><span><i class="sw" style="background:var(--up)"></i>Økning</span><span><i class="sw" style="background:var(--down)"></i>Nedgang</span><span><i class="sw line"></i>Forventet prisvekst ≈ 2,7 %</span></div>
+    <div class="chart" id="c-change" role="img" aria-label="Endring per samferdselsområde fra 2026 til 2027"></div>
+    <details class="tbl"><summary>Vis tallene som tabell</summary><table id="t-change"></table></details>
+    <p class="src">Kilde: Prop. 1 S (2026–2027) Samferdselsdepartementet, tabell over programområder. Prisvekst: prisjustering brukt for avgiftene i Prop. 1 LS.</p>
+  </div>
+</section>
+
+<section id="elbil">
+  <h2>Elbil: hvor mye mer moms?</h2>
+  <p class="intro">Elbiler er fritatt for moms opp til en grense. Over grensen betaler du 25 % moms på det som overstiger. Regjeringen vil halvere grensen fra 300 000 til 150 000 kroner. Dra i glidebryteren for å se hva det betyr for en bil i din prisklasse.</p>
+  <div class="card">
+    <div class="calc">
+      <label for="price">Bilens pris før moms <output id="price-out" for="price"></output></label>
+      <input id="price" type="range" min="100000" max="800000" step="10000" value="400000">
+      <div class="res" aria-live="polite">
+        <div><div class="k">Moms med 2026-regler</div><div class="x" id="m26"></div></div>
+        <div><div class="k">Moms med 2027-forslaget</div><div class="x" id="m27"></div></div>
+        <div class="delta"><div class="k">Du betaler mer</div><div class="x" id="mdiff"></div></div>
+      </div>
+    </div>
+    <p class="chart-title">For biler over 300 000 kr blir momsen 37 500 kr høyere</p>
+    <div class="legend"><span><i class="sw line solid" style="border-color:var(--old)"></i>2026-regler (grense 300 000 kr)</span><span><i class="sw line solid" style="border-color:var(--s1)"></i>2027-forslaget (grense 150 000 kr)</span></div>
+    <div class="chart" id="c-ev" role="img" aria-label="Moms på elbil etter bilens pris, 2026 mot 2027"></div>
+    <p class="src">Forenklet beregning av moms på nye elbiler. Endringen gjelder også bruktimporterte elbiler. Kilde: Prop. 1 LS (2026–2027).</p>
+  </div>
+</section>
+
+<section id="drivstoff">
+  <h2>Drivstoff: avgiften flyttes, men totalen øker litt</h2>
+  <p class="intro">Regjeringen kutter veibruksavgiften med 50 øre per liter for å skjerme bilistene mot en høyere CO₂-avgift. Kuttet er regnet mot et prisjustert nivå. I kroner og øre blir samlet avgift per liter likevel litt høyere enn i år.</p>
+  <div class="card">
+    <p class="chart-title">Avgiften per liter øker med 20 øre på bensin og 27 øre på diesel</p>
+    <p class="chart-sub">Avgift per liter, kroner, uten moms</p>
+    <div class="legend"><span><i class="sw" style="background:var(--s1)"></i>Veibruksavgift</span><span><i class="sw" style="background:var(--s2)"></i>CO₂-avgift</span></div>
+    <div class="chart" id="c-fuel" role="img" aria-label="Veibruksavgift og CO2-avgift per liter bensin og diesel, 2026 og 2027"></div>
+    <details class="tbl"><summary>Vis tallene som tabell</summary><table id="t-fuel"></table></details>
+    <p class="src">Kilde: Finansdepartementet, avgiftssatser 2026 og forslag 2027. Med 25 % moms blir økningen ca. 25 øre (bensin) og 34 øre (diesel) per liter.</p>
+  </div>
+</section>
+
+<section id="ntp">
+  <h2>Følger budsjettet transportplanen?</h2>
+  <p class="intro">Nasjonal transportplan (NTP) er Stortingets langsiktige plan for samferdsel. Forslaget for 2027 gir 98,2 av de 106,9 milliardene planen legger opp til i snitt per år. Andelen har sunket hvert år siden planen startet.</p>
+  <div class="trend"><div><b>95 %</b>2025</div><div><b>93 %</b>2026</div><div><b>92 %</b>2027-forslaget</div></div>
+  <div class="card">
+    <p class="chart-title">Riksvegene får 98 % av planen, jernbanen 87 % og byene 84 %</p>
+    <p class="chart-sub">Forslag 2027 som andel av årlig snitt i NTP 2025–2030. Mrd. 2027-kroner per år.</p>
+    <div class="chart" id="c-ntp" role="img" aria-label="Oppfølging av NTP per område i 2027"></div>
+    <details class="tbl"><summary>Vis tallene som tabell</summary><table id="t-ntp"></table></details>
+    <p class="src">Kilde: Prop. 1 S (2026–2027), tabell over oppfølging av NTP 2025–2036.</p>
+  </div>
+</section>
+
+<section id="nytt">
+  <h2>Nytt i budsjettet</h2>
+  <ul class="list">
+    <li><b>To nye vegprosjekter:</b> E39 Smiene–Harestad i Rogaland (6,6 mrd. kr, anleggsstart sent i 2027 eller tidlig i 2028) og rv. 70 Vikansvingen–Kontrollplassen i Kristiansund.</li>
+    <li><b>100 mill. kr til digital sikkerhet</b> på vegnettet, for å beskytte de digitale styringssystemene mot angrep.</li>
+    <li><b>135 mill. kr til mobildekning i jernbanetunneler</b>, først på Gardermobanen, Kongsvingerbanen, Hovedbanen, Dovrebanen, Drammenstunnelen og Ulrikentunnelen.</li>
+    <li><b>Små vegtiltak</b> for vedlikehold, militær mobilitet, trafikksikkerhet og døgnhvileplasser med lading for tungbiler.</li>
+    <li><b>Flytoget</b> blir en del av det vanlige regiontogtilbudet fra desember 2027.</li>
+    <li><b>Rabatt på flybilletter for fastboende</b> i Lofoten og Vesterålen skal utredes som en prøveordning.</li>
+  </ul>
+  <h2 style="margin-top:32px">Fortsetter som før</h2>
+  <ul class="list same">
+    <li>Pågående vegprosjekter fullføres: E45 Kløfta i Finnmark, E134 Røldal–Seljestad i Vestland og E6 Megården–Sommerset i Nordland.</li>
+    <li>11,9 mrd. kr til drift og vedlikehold av riksveiene, omtrent som i år justert for prisvekst. Ingen nye rassikringsprosjekter.</li>
+    <li>7,1 mrd. kr til byvekstavtaler i 13 byområder.</li>
+    <li>1,05 mrd. kr til Stad skipstunnel. Regjeringen skriver at dette gir senere oppstart for andre prosjekter.</li>
+  </ul>
+</section>
+
+<section id="hva-sier">
+  <h2>Hva sier regjeringen og kritikerne?</h2>
+  <div class="two">
+    <div class="card"><h3>Regjeringen</h3><ul>
+      <li>Handlingsrommet er trangere, og det må gjøres «tøffe prioriteringar».</li>
+      <li>Vedlikehold går foran nye veger.</li>
+      <li>Jernbanen får historisk mye penger, og omprioriteringen trengs for å fullføre prosjekter.</li>
+    </ul></div>
+    <div class="card"><h3>Kritikerne</h3><ul>
+      <li><a href="https://www.naf.no/politikk-og-samfunn/samferdsel/statsbudsjettet-slik-pavirker-det-deg">NAF</a>: bilistene får dyrere elbil og ingen reell lettelse på drivstoff; forfallet på fylkesveiene er over 108 mrd. kr.</li>
+      <li><a href="https://www.nrk.no/vestland/statsbudsjettet-2027_-desse-samferdselsprosjekta-vil-regjeringa-bruka-pengar-pa-1.18046538">KS</a>: kuttet i fylkesvegmilliarden svekker sikkerhet og beredskap; flere fylker vurderer å stenge veier og bruer.</li>
+      <li><a href="https://www.nrk.no/stor-oslo/advarer-om-mer-togkaos_-_-kaster-bensin-pa-balet-1.18048505">Entreprenørforeningen (EBA) og MDG</a>: kuttet i jernbanevedlikehold gir mer togtrøbbel.</li>
+      <li><a href="https://www.bygg.no/frp-nye-veier-statens-vegvesen/kritisk-til-veisatsing-i-realiteten-et-kutt/2961501">Frp</a>: Statens vegvesen får i realiteten et kutt.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="ordliste">
+  <h2>Ordliste</h2>
+  <dl class="gloss">
+    <div><dt>NTP – Nasjonal transportplan</dt><dd>Stortingets plan for hvor mye som skal brukes på veg, bane, by, sjø og fly i 2025–2036. Budsjettet hvert år avgjør hvor mye av planen som faktisk følges opp.</dd></div>
+    <div><dt>Saldert og revidert budsjett</dt><dd>Saldert budsjett er det Stortinget vedtar i desember. Revidert budsjett er justeringen som vedtas før sommeren.</dd></div>
+    <div><dt>Veibruksavgift</dt><dd>Avgift på drivstoff som skal dekke kostnader ved bilbruk, som slitasje, ulykker og kø.</dd></div>
+    <div><dt>CO₂-avgift</dt><dd>Avgift på utslipp av CO₂. Den økes hvert år for å nå klimamålene.</dd></div>
+    <div><dt>Nominelt og reelt</dt><dd>Nominelt er kroner slik de står. Reelt er justert for prisvekst. En økning på 2 % er en reell nedgang hvis prisene stiger 2,7 %.</dd></div>
+    <div><dt>Frie midler</dt><dd>Penger fylkene selv bestemmer hva de skal brukes til, i motsetning til øremerkede penger.</dd></div>
+  </dl>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2 style="font-size:20px">Kilder</h2>
+    <ol>
+      <li><a href="https://www.regjeringen.no/no/dokumenter/prop.-1-s-20262027/id3175333/">Prop. 1 S (2026–2027) Samferdselsdepartementet</a></li>
+      <li><a href="https://www.regjeringen.no/no/dokumenter/prop.-1-ls-20262027/id3176120/">Prop. 1 LS (2026–2027) Skatter, avgifter og toll 2027</a></li>
+      <li><a href="https://www.regjeringen.no/no/tema/okonomi-og-budsjett/skatter-og-avgifter/skatte-og-avgiftssatser/avgiftssatser-2027/id3173439/">Avgiftssatser i 2026 og regjeringens forslag for 2027</a></li>
+      <li><a href="https://www.regjeringen.no/no/aktuelt/framleis-hoge-ambisjonar-for-samferdsel/id3175561/">Regjeringen: Framleis høge ambisjonar for samferdsel</a></li>
+      <li><a href="https://www.nrk.no/vestland/statsbudsjettet-2027_-desse-samferdselsprosjekta-vil-regjeringa-bruka-pengar-pa-1.18046538">NRK: Desse samferdselsprosjekta vil regjeringa bruka pengar på</a></li>
+      <li><a href="https://www.nrk.no/stor-oslo/advarer-om-mer-togkaos_-_-kaster-bensin-pa-balet-1.18048505">NRK: Advarer om mer togkaos</a></li>
+      <li><a href="https://www.nrk.no/rogaland/statsbudsjettet-2027_-na-blir-elbilene-enda-dyrere-1.18047539">NRK: Nå blir elbilene enda dyrere</a></li>
+      <li><a href="https://www.naf.no/politikk-og-samfunn/samferdsel/statsbudsjettet-slik-pavirker-det-deg">NAF: Mer moms på elbil og dyrere drivstoff</a></li>
+      <li><a href="https://www.banenor.no/nyheter-og-aktuelt/nyheter/2026/statsbudsjettet-2027--dette-betyr-det-for-bane-nor/">Bane NOR: Statsbudsjettet 2027</a></li>
+    </ol>
+    <p>Tallene gjelder regjeringens forslag, lagt fram 7. oktober 2026. Stortinget kan endre forslaget før vedtaket i desember. Kroner er løpende kroner der ikke annet står. Sist oppdatert 20. oktober 2026.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const NS = 'http://www.w3.org/2000/svg';
+  const nb = (v, d) => v.toLocaleString('nb-NO', {minimumFractionDigits:d, maximumFractionDigits:d});
+  const kr = v => Math.round(v).toLocaleString('nb-NO') + ' kr';
+  const sign = v => (v > 0 ? '+' : v < 0 ? '−' : '');
+  const pctS = v => sign(v) + nb(Math.abs(v), 1) + ' %';
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+
+  // Bar with a 4px rounded data end, square at the baseline
+  function hbar(xa, xb, y, h, r){
+    r = Math.min(r === undefined ? 4 : r, Math.abs(xb - xa), h / 2);
+    const d = xb >= xa ? 1 : -1;
+    return `M${xa},${y}H${xb - d*r}Q${xb},${y} ${xb},${y + r}V${y + h - r}Q${xb},${y + h} ${xb - d*r},${y + h}H${xa}Z`;
+  }
+  const svg = (w, h, body) => `<svg xmlns="${NS}" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" font-size="13">${body}</svg>`;
+
+  /* ---------- 1. Endring per område ---------- */
+  const AREAS = [
+    {name:'Veg', sub:'riksveg, Nye Veier, fylkesveg', y26:50404.8, y27:51676.0},
+    {name:'Jernbane', sub:'drift, vedlikehold, utbygging', y26:31696.9, y27:33721.6},
+    {name:'By og kollektiv', sub:'byvekstavtaler, månedskort m.m.', y26:8907.0, y27:9090.9},
+    {name:'Lån til nye tog', sub:'Norske tog AS', y26:4016.2, y27:5069.4},
+    {name:'Luftfart', sub:'Avinor, regionale flyruter', y26:4935.0, y27:3356.3},
+    {name:'Post', sub:'statens kjøp av posttjenester', y26:2012.0, y27:1520.7},
+    {name:'Administrasjon', sub:'departementet', y26:539.7, y27:542.9}
+  ].map(a => Object.assign(a, {pct:(a.y27 / a.y26 - 1) * 100})).sort((a, b) => b.pct - a.pct);
+  const PRICE = 2.7;
+
+  function drawChange(el){
+    const W = Math.max(300, el.clientWidth), narrow = W < 560;
+    const valW = 64, dmin = -35, dmax = 30;
+    const labelW = narrow ? 0 : 230;
+    const x0 = narrow ? 4 : labelW, x1 = W - valW;
+    const sx = v => x0 + (v - dmin) / (dmax - dmin) * (x1 - x0);
+    const y0 = 30, rh = narrow ? 62 : 48, bh = 18, barOff = narrow ? 30 : (rh - bh) / 2 - 4;
+    const yEnd = y0 + AREAS.length * rh;
+    const H = yEnd + 34;
+    const ticks = narrow ? [-30, -15, 0, 15, 30] : [-30, -20, -10, 0, 10, 20, 30];
+    let b = '', lab = '';
+    ticks.forEach(t => {
+      if (t !== 0) b += `<line x1="${sx(t)}" x2="${sx(t)}" y1="${y0 - 4}" y2="${yEnd}" stroke="var(--grid)" stroke-width="1"/>`;
+      b += `<text x="${sx(t)}" y="${yEnd + 18}" text-anchor="middle" class="t-mut" font-size="12">${sign(t)}${Math.abs(t)}</text>`;
+    });
+    AREAS.forEach((r, i) => {
+      const y = y0 + i * rh;
+      const by = y + barOff;
+      const tip = `${r.name}: ${nb(r.y26/1000,1)} mrd. kr i 2026 → ${nb(r.y27/1000,1)} mrd. kr i 2027 (${pctS(r.pct)})`;
+      if (narrow){
+        lab += `<text x="${x0}" y="${y + 14}" class="t-ink halo" font-weight="600">${r.name} <tspan class="t-2" font-weight="400">${nb(r.y26/1000,1)} → ${nb(r.y27/1000,1)} mrd.</tspan></text>`;
+      } else {
+        b += `<text x="0" y="${by + 6}" class="t-ink" font-weight="600" font-size="14">${r.name}</text>`;
+        b += `<text x="0" y="${by + 23}" class="t-2" font-size="12.5">${nb(r.y26/1000,1)} → ${nb(r.y27/1000,1)} mrd. kr</text>`;
+      }
+      const col = r.pct >= 0 ? 'var(--up)' : 'var(--down)';
+      b += `<path d="${hbar(sx(0), sx(r.pct), by, bh)}" fill="${col}"/>`;
+      b += `<text x="${W}" y="${by + bh/2 + 5}" text-anchor="end" class="t-ink" font-weight="650" font-size="14">${pctS(r.pct)}</text>`;
+      b += `<rect x="0" y="${y}" width="${W}" height="${rh}" fill="transparent" data-tip="${esc(tip)}"/>`;
+    });
+    b += `<line x1="${sx(0)}" x2="${sx(0)}" y1="${y0 - 4}" y2="${yEnd}" stroke="var(--axis)" stroke-width="1"/>`;
+    b += `<line x1="${sx(PRICE)}" x2="${sx(PRICE)}" y1="${y0 - 8}" y2="${yEnd}" stroke="var(--ink-2)" stroke-width="1.25" stroke-dasharray="4 3"/>`;
+    b += `<text x="${sx(PRICE) + 6}" y="${y0 - 12}" class="t-2" font-size="12">Prisvekst ≈ 2,7 %</text>`;
+    el.innerHTML = svg(W, H, b + lab);
+  }
+  (function(){
+    const t = document.getElementById('t-change');
+    let h = '<thead><tr><th>Område</th><th class="n">2026, mrd. kr</th><th class="n">2027, mrd. kr</th><th class="n">Endring</th></tr></thead><tbody>';
+    AREAS.forEach(r => { h += `<tr><td>${r.name}</td><td class="n">${nb(r.y26/1000,2)}</td><td class="n">${nb(r.y27/1000,2)}</td><td class="n">${pctS(r.pct)}</td></tr>`; });
+    const s26 = AREAS.reduce((s, r) => s + r.y26, 0), s27 = AREAS.reduce((s, r) => s + r.y27, 0);
+    h += `<tr><td><b>Sum</b></td><td class="n"><b>${nb(s26/1000,2)}</b></td><td class="n"><b>${nb(s27/1000,2)}</b></td><td class="n"><b>${pctS((s27/s26-1)*100)}</b></td></tr></tbody>`;
+    t.innerHTML = h;
+  })();
+
+  /* ---------- 2. Elbil-moms ---------- */
+  const VAT = 0.25, LIM26 = 300000, LIM27 = 150000, PMAX = 800000;
+  const vat = (p, lim) => Math.max(0, p - lim) * VAT;
+  const priceEl = document.getElementById('price');
+
+  function drawEV(el){
+    const W = Math.max(300, el.clientWidth), narrow = W < 560;
+    const left = narrow ? 56 : 66, right = narrow ? 14 : 104, y0 = 14, H = narrow ? 250 : 280, bottom = 40;
+    const x1 = W - right, yB = H - bottom, YMAX = 175000;
+    const sx = p => left + p / PMAX * (x1 - left);
+    const sy = v => yB - v / YMAX * (yB - y0);
+    const p = +priceEl.value;
+    let b = '';
+    [0, 50000, 100000, 150000].forEach(t => {
+      b += `<line x1="${left}" x2="${x1}" y1="${sy(t)}" y2="${sy(t)}" stroke="${t === 0 ? 'var(--axis)' : 'var(--grid)'}" stroke-width="1"/>`;
+      b += `<text x="${left - 8}" y="${sy(t) + 4}" text-anchor="end" class="t-mut" font-size="12">${t.toLocaleString('nb-NO')}</text>`;
+    });
+    (narrow ? [0, 200000, 400000, 600000, 800000] : [0, 100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000]).forEach(t => {
+      const lab = narrow ? (t / 1000) + 'k' : t.toLocaleString('nb-NO');
+      b += `<text x="${sx(t)}" y="${yB + 18}" text-anchor="middle" class="t-mut" font-size="12">${lab}</text>`;
+    });
+    b += `<text x="${(left + x1) / 2}" y="${yB + 36}" text-anchor="middle" class="t-2" font-size="12">Bilens pris før moms, kr</text>`;
+    const line = (lim, col, w) => `<polyline points="${sx(0)},${sy(0)} ${sx(lim)},${sy(0)} ${sx(PMAX)},${sy(vat(PMAX, lim))}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linejoin="round" stroke-linecap="round"/>`;
+    b += line(LIM26, 'var(--old)', 2) + line(LIM27, 'var(--s1)', 2.5);
+    if (!narrow){
+      b += `<text x="${x1 + 8}" y="${sy(vat(PMAX, LIM27)) + 4}" class="t-ink" font-size="12.5" font-weight="600">2027-forslag</text>`;
+      b += `<text x="${x1 + 8}" y="${sy(vat(PMAX, LIM26)) + 4}" class="t-2" font-size="12.5">2026-regler</text>`;
+    }
+    // Grense-markører
+    [[LIM27, 'grense 2027'], [LIM26, 'grense 2026']].forEach(([lim, lab]) => {
+      b += `<line x1="${sx(lim)}" x2="${sx(lim)}" y1="${sy(0)}" y2="${sy(0) + 5}" stroke="var(--muted)" stroke-width="1"/>`;
+      if (!narrow) b += `<text x="${sx(lim) - 4}" y="${sy(0) - 7}" text-anchor="end" class="t-mut" font-size="11.5">${lab}</text>`;
+    });
+    // Valgt pris
+    const a = vat(p, LIM26), c = vat(p, LIM27);
+    b += `<line x1="${sx(p)}" x2="${sx(p)}" y1="${y0}" y2="${yB}" stroke="var(--ink-2)" stroke-width="1"/>`;
+    if (c - a > 0){
+      b += `<line x1="${sx(p)}" x2="${sx(p)}" y1="${sy(c)}" y2="${sy(a)}" stroke="var(--s1)" stroke-width="4" stroke-linecap="round" opacity=".35"/>`;
+      // Etiketten legges over den blå linja, på venstre side når det er plass
+      const roomLeft = sx(p) - left > 120;
+      b += `<text x="${roomLeft ? sx(p) - 10 : sx(p) + 10}" y="${sy(c) - 12}" text-anchor="${roomLeft ? 'end' : 'start'}" class="t-ink" font-weight="650">+${kr(c - a)}</text>`;
+    }
+    b += `<circle cx="${sx(p)}" cy="${sy(a)}" r="5" fill="var(--old)" stroke="var(--card)" stroke-width="2" data-tip="${esc('2026-regler: ' + kr(a) + ' i moms')}"/>`;
+    b += `<circle cx="${sx(p)}" cy="${sy(c)}" r="5" fill="var(--s1)" stroke="var(--card)" stroke-width="2" data-tip="${esc('2027-forslaget: ' + kr(c) + ' i moms')}"/>`;
+    el.innerHTML = svg(W, H, b);
+  }
+  function updateEV(){
+    const p = +priceEl.value, a = vat(p, LIM26), c = vat(p, LIM27);
+    document.getElementById('price-out').textContent = kr(p);
+    document.getElementById('m26').textContent = kr(a);
+    document.getElementById('m27').textContent = kr(c);
+    document.getElementById('mdiff').textContent = (c - a > 0 ? '+' : '') + kr(c - a);
+    drawEV(document.getElementById('c-ev'));
+  }
+  priceEl.addEventListener('input', updateEV);
+
+  /* ---------- 3. Drivstoff ---------- */
+  const FUEL = [
+    {fuel:'Bensin', yr:'2026', vba:3.77, co2:3.80},
+    {fuel:'Bensin', yr:'2027', vba:3.37, co2:4.40},
+    {fuel:'Diesel', yr:'2026', vba:2.28, co2:4.42},
+    {fuel:'Diesel', yr:'2027', vba:1.84, co2:5.13}
+  ];
+  function drawFuel(el){
+    const W = Math.max(300, el.clientWidth), narrow = W < 560;
+    const labelW = narrow ? 92 : 130, valW = narrow ? 118 : 150;
+    const x0 = labelW, x1 = W - valW, MAX = 8;
+    const sx = v => x0 + v / MAX * (x1 - x0);
+    const bh = 26, rh = 38, gap = 18, y0 = 6;
+    let b = '', y = y0;
+    FUEL.forEach((r, i) => {
+      if (i === 2) y += gap;
+      const tot = r.vba + r.co2;
+      const prev = r.yr === '2027' ? FUEL[i - 1] : null;
+      const xv = sx(r.vba);
+      b += `<text x="0" y="${y + bh/2 + 5}" class="t-ink" font-weight="${r.yr === '2027' ? 650 : 400}" font-size="14">${r.fuel} ${r.yr}</text>`;
+      b += `<rect x="${x0}" y="${y}" width="${Math.max(0, xv - x0 - 1)}" height="${bh}" fill="var(--s1)" data-tip="${esc(`${r.fuel} ${r.yr}: veibruksavgift ${nb(r.vba,2)} kr/l`)}"/>`;
+      b += `<path d="${hbar(xv + 1, sx(tot), y, bh)}" fill="var(--s2)" data-tip="${esc(`${r.fuel} ${r.yr}: CO₂-avgift ${nb(r.co2,2)} kr/l`)}"/>`;
+      if (xv - x0 > 40) b += `<text x="${(x0 + xv) / 2}" y="${y + bh/2 + 4.5}" text-anchor="middle" fill="#ffffff" font-size="12.5" font-weight="600" pointer-events="none">${nb(r.vba,2)}</text>`;
+      if (sx(tot) - xv > 40) b += `<text x="${(xv + sx(tot)) / 2}" y="${y + bh/2 + 4.5}" text-anchor="middle" fill="#0b0b0b" font-size="12.5" font-weight="600" pointer-events="none">${nb(r.co2,2)}</text>`;
+      let lab = `${nb(tot,2)} kr`;
+      b += `<text x="${sx(tot) + 8}" y="${y + bh/2 + 5}" class="t-ink" font-weight="650" font-size="14">${lab}${prev ? `<tspan class="t-2" font-weight="400" font-size="12.5"> (+${Math.round((tot - prev.vba - prev.co2) * 100)} øre)</tspan>` : ''}</text>`;
+      y += rh;
+    });
+    b += `<line x1="${x0}" x2="${x0}" y1="${y0 - 4}" y2="${y - rh + bh + 4}" stroke="var(--axis)" stroke-width="1"/>`;
+    el.innerHTML = svg(W, y - rh + bh + 10, b);
+  }
+  (function(){
+    const t = document.getElementById('t-fuel');
+    let h = '<thead><tr><th>Drivstoff</th><th>År</th><th class="n">Veibruksavgift</th><th class="n">CO₂-avgift</th><th class="n">Sum, kr/l</th></tr></thead><tbody>';
+    FUEL.forEach(r => { h += `<tr><td>${r.fuel}</td><td>${r.yr}</td><td class="n">${nb(r.vba,2)}</td><td class="n">${nb(r.co2,2)}</td><td class="n">${nb(r.vba + r.co2,2)}</td></tr>`; });
+    t.innerHTML = h + '</tbody>';
+  })();
+
+  /* ---------- 4. NTP ---------- */
+  const NTP = [
+    {omr:'Riksveg', ntp:50.4, b27:49.4},
+    {omr:'Fylkesveg (tilskudd)', ntp:5.7, b27:5.0},
+    {omr:'Byområder', ntp:8.2, b27:6.9},
+    {omr:'Jernbane', ntp:37.8, b27:32.8},
+    {omr:'Kyst', ntp:3.3, b27:3.1},
+    {omr:'Luftfart', ntp:0.9, b27:0.6},
+    {omr:'Tverrsektorielle tiltak', ntp:0.5, b27:0.4}
+  ].map(r => Object.assign(r, {p: r.b27 / r.ntp})).sort((a, b) => b.p - a.p);
+  const NTP_TOT = {ntp:106.9, b27:98.2};
+
+  function drawNTP(el){
+    const W = Math.max(300, el.clientWidth), narrow = W < 560;
+    const labelW = narrow ? 0 : 190, valW = narrow ? 128 : 150;
+    const x0 = narrow ? 4 : labelW, x1 = W - valW;
+    const sx = p => x0 + p * (x1 - x0);
+    const y0 = 28, rh = narrow ? 50 : 36, bh = 18, off = narrow ? 22 : (rh - bh) / 2;
+    const yEnd = y0 + NTP.length * rh;
+    let b = '';
+    NTP.forEach((r, i) => {
+      const y = y0 + i * rh, by = y + off;
+      if (narrow) b += `<text x="${x0}" y="${y + 15}" class="t-ink" font-weight="600">${r.omr}</text>`;
+      else b += `<text x="0" y="${by + bh/2 + 5}" class="t-ink" font-size="14">${r.omr}</text>`;
+      b += `<rect x="${x0}" y="${by}" width="${x1 - x0}" height="${bh}" fill="var(--track)"/>`;
+      b += `<path d="${hbar(x0, sx(r.p), by, bh)}" fill="var(--s1)"/>`;
+      b += `<text x="${x1 + 12}" y="${by + bh/2 + 5}" class="t-ink" font-weight="650" font-size="14">${Math.round(r.p * 100)} %<tspan class="t-2" font-weight="400" font-size="12.5" dx="8">${nb(r.b27,1)} av ${nb(r.ntp,1)}</tspan></text>`;
+      b += `<rect x="0" y="${y}" width="${W}" height="${rh}" fill="transparent" data-tip="${esc(`${r.omr}: ${nb(r.b27,1)} av ${nb(r.ntp,1)} mrd. kr per år (${Math.round(r.p*100)} % av NTP)`)}"/>`;
+    });
+    b += `<line x1="${x0}" x2="${x0}" y1="${y0 - 4}" y2="${yEnd}" stroke="var(--axis)" stroke-width="1"/>`;
+    b += `<line x1="${sx(1)}" x2="${sx(1)}" y1="${y0 - 8}" y2="${yEnd}" stroke="var(--ink-2)" stroke-width="1.25" stroke-dasharray="4 3"/>`;
+    b += `<text x="${sx(1)}" y="${y0 - 12}" text-anchor="end" class="t-2" font-size="12">NTP-plan = 100 %</text>`;
+    const tp = NTP_TOT.b27 / NTP_TOT.ntp;
+    b += `<text x="${x0}" y="${yEnd + 22}" class="t-2" font-size="12.5">Samlet: ${Math.round(tp*100)} % (${nb(NTP_TOT.b27,1)} av ${nb(NTP_TOT.ntp,1)} mrd. kr)</text>`;
+    el.innerHTML = svg(W, yEnd + 32, b);
+  }
+  (function(){
+    const t = document.getElementById('t-ntp');
+    let h = '<thead><tr><th>Område</th><th class="n">NTP-snitt, mrd. kr</th><th class="n">Forslag 2027</th><th class="n">Andel</th></tr></thead><tbody>';
+    NTP.forEach(r => { h += `<tr><td>${r.omr}</td><td class="n">${nb(r.ntp,1)}</td><td class="n">${nb(r.b27,1)}</td><td class="n">${Math.round(r.p*100)} %</td></tr>`; });
+    h += `<tr><td><b>Samlet</b></td><td class="n"><b>${nb(NTP_TOT.ntp,1)}</b></td><td class="n"><b>${nb(NTP_TOT.b27,1)}</b></td><td class="n"><b>${Math.round(NTP_TOT.b27/NTP_TOT.ntp*100)} %</b></td></tr></tbody>`;
+    t.innerHTML = h;
+  })();
+
+  /* ---------- render + resize ---------- */
+  const charts = [['c-change', drawChange], ['c-ev', () => updateEV()], ['c-fuel', drawFuel], ['c-ntp', drawNTP]];
+  function renderAll(){ charts.forEach(([id, fn]) => fn(document.getElementById(id))); }
+  renderAll();
+  let rt; const ro = new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(renderAll, 80); });
+  ro.observe(document.querySelector('main'));
+
+  /* ---------- tooltip ---------- */
+  const tip = document.getElementById('tip');
+  function showTip(e){
+    const t = e.target.closest && e.target.closest('[data-tip]');
+    if (!t){ tip.hidden = true; return; }
+    tip.textContent = t.getAttribute('data-tip'); tip.hidden = false;
+    const pad = 14, r = tip.getBoundingClientRect();
+    let x = e.clientX + pad, y = e.clientY + pad;
+    if (x + r.width > innerWidth - 8) x = e.clientX - r.width - pad;
+    if (y + r.height > innerHeight - 8) y = e.clientY - r.height - pad;
+    tip.style.left = Math.max(8, x) + 'px'; tip.style.top = Math.max(8, y) + 'px';
+  }
+  document.addEventListener('pointermove', showTip);
+  document.addEventListener('pointerdown', showTip);
+  document.addEventListener('scroll', () => { tip.hidden = true; }, {passive:true});
+})();
+</script>
+</body>
+</html>
